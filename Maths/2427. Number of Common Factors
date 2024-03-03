@@ -1,5 +1,5 @@
-/// 2427. Number of common factors
-==================================
+/// 2427. Number of common factors  (0ms)
+======================================================
 
 
 class Solution {
@@ -16,3 +16,31 @@ class Solution {
         return count;
     }
 }
+
+========================================================
+
+
+
+//   By (3ms)
+=========================================================
+
+class Solution {
+    public int commonFactors(int a, int b) {
+        int min = Math.min(a,b);
+        List<Integer> lst = new ArrayList<>();
+        for(int i = 1; i <= min; i++){
+            if(a % i == 0){
+                lst.add(i);
+            }
+        }
+        int count = 0;
+        for(int i = 1; i <= min; i++){
+            if(lst.contains(i) && b % i == 0){
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+==========================================================
